@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpJunior\NovaLogViewer;
+namespace Zitkala\NovaLogViewer;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool as BaseTool;
@@ -14,9 +14,9 @@ class Tool extends BaseTool
      */
     public function boot()
     {
-        Nova::script('nova-log-viewer', __DIR__.'/../dist/js/tool.js');
+        Nova::script('nova-log-viewer2', __DIR__.'/../dist/js/tool.js');
         // Not needed until css is written.
-        // Nova::style('nova-log-viewer', __DIR__.'/../dist/css/tool.css');
+        // Nova::style('nova-log-viewer2', __DIR__.'/../dist/css/tool.css');
     }
 
     /**
@@ -26,6 +26,6 @@ class Tool extends BaseTool
      */
     public function renderNavigation()
     {
-        return view('nova-log-viewer::navigation');
+        return view('nova-log-viewer2::navigation');
     }
 }

@@ -18,7 +18,7 @@
                                     :disabled="menu.count === 0"
                                     :style="{ 'background-color' : key !== 'date' ? getColor(menu.count === 0 ? 'empty' : key) : '#1976D2' }"
                                     class="w-full font-bold py-2 px-4 inline-flex items-center"
-                                    @click="$router.push({name: 'nova-log-viewer-show', params: {
+                                    @click="$router.push({name: 'nova-log-viewer2-show', params: {
                                         date: $route.params.date,
                                         level: key
                                     }})"
@@ -172,12 +172,12 @@ export default {
     },
     watch: {
         '$route.params.level': function(level) {
-            this.getLog(`/nova-vendor/php-junior/nova-log-viewer/get/${this.$route.params.date}/${level}`)
+            this.getLog(`/nova-vendor/zitkala/nova-log-viewer2/get/${this.$route.params.date}/${level}`)
         },
     },
     computed: {
         downloadUrl() {
-            return '/nova-vendor/php-junior/nova-log-viewer/download/';
+            return '/nova-vendor/zitkala/nova-log-viewer2/download/';
         },
     },
     mounted() {
@@ -190,7 +190,7 @@ export default {
         getLog(url) {
             url =
                 url ||
-                `/nova-vendor/php-junior/nova-log-viewer/get/${this.$route.params.date}/${
+                `/nova-vendor/zitkala/nova-log-viewer2/get/${this.$route.params.date}/${
                     this.$route.params.level
                 }`;
             axios.get(url).then(({ data }) => {
@@ -227,13 +227,13 @@ export default {
         confirmDelete() {
             axios({
                 method: 'delete',
-                url: '/nova-vendor/php-junior/nova-log-viewer/delete',
+                url: '/nova-vendor/zitkala/nova-log-viewer2/delete',
                 data: {
                     date: this.deleting.date,
                 },
             }).then(res => {
                 this.deleteModalOpen = false;
-                this.$router.push({ name: 'nova-log-viewer-list' });
+                this.$router.push({ name: 'nova-log-viewer2-list' });
             });
         },
     },

@@ -1,12 +1,12 @@
 <?php
 
-namespace PhpJunior\NovaLogViewer;
+namespace Zitkala\NovaLogViewer;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use PhpJunior\NovaLogViewer\Http\Middleware\Authorize;
+use Zitkala\NovaLogViewer\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-log-viewer');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-log-viewer2');
 
         $this->app->booted(function () {
             $this->routes();
@@ -42,7 +42,7 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/php-junior/nova-log-viewer')
+                ->prefix('nova-vendor/zitkala/nova-log-viewer2')
                 ->group(__DIR__.'/../routes/api.php');
     }
 

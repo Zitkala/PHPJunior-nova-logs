@@ -1,13 +1,13 @@
 <?php
 
-namespace PhpJunior\NovaLogViewer\Http\Controllers;
+namespace Zitkala\NovaLogViewer\Http\Controllers;
 
-use Arcanedev\LogViewer\Exceptions\LogNotFoundException;
-use Arcanedev\LogViewer\Tables\StatsTable;
+use Zitkala\LogViewer\Exceptions\LogNotFoundException;
+use Zitkala\LogViewer\Tables\StatsTable;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Routing\Controller;
-use Arcanedev\LogViewer\Contracts\LogViewer as LogViewerContract;
+use Zitkala\LogViewer\Contracts\LogViewer as LogViewerContract;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
@@ -113,7 +113,7 @@ class NovaLogViewerController extends Controller
      * @param  \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\JsonResponse
-     * @throws \Arcanedev\LogViewer\Exceptions\FilesystemException
+     * @throws \Zitkala\LogViewer\Exceptions\FilesystemException
      */
     public function delete(Request $request)
     {
@@ -126,7 +126,7 @@ class NovaLogViewerController extends Controller
     /**
      * Prepare chart data.
      *
-     * @param  \Arcanedev\LogViewer\Tables\StatsTable $stats
+     * @param  \Zitkala\LogViewer\Tables\StatsTable $stats
      *
      * @return array
      */
@@ -199,7 +199,7 @@ class NovaLogViewerController extends Controller
      *
      * @param  string  $date
      *
-     * @return \Arcanedev\LogViewer\Entities\Log|null
+     * @return \Zitkala\LogViewer\Entities\Log|null
      */
     protected function getLogOrFail($date)
     {

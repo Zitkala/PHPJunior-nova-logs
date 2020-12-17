@@ -89,7 +89,7 @@ export default {
             return color(level)
         },
         async getListLogs(url) {
-            url = url || '/nova-vendor/php-junior/nova-log-viewer/get_list_logs';
+            url = url || '/nova-vendor/zitkala/nova-log-viewer2/get_list_logs';
             const { data } = await axios.get(url);
             this.headers = data.headers;
             this.rows = data.rows;
@@ -111,7 +111,7 @@ export default {
         confirmDelete() {
             axios({
                 method: 'delete',
-                url: '/nova-vendor/php-junior/nova-log-viewer/delete',
+                url: '/nova-vendor/zitkala/nova-log-viewer2/delete',
                 data: {
                     date: this.deleting.date,
                 },

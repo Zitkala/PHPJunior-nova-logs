@@ -1,18 +1,18 @@
 Nova.booting((Vue, router) => {
     router.addRoutes([
         {
-            name: 'nova-log-viewer-dashboard',
-            path: '/nova-log-viewer/dashboard',
+            name: 'nova-log-viewer2-dashboard',
+            path: '/nova-log-viewer2/dashboard',
             component: require('./components/Dashboard'),
         },
         {
-            name: 'nova-log-viewer-list',
-            path: '/nova-log-viewer/list',
+            name: 'nova-log-viewer2-list',
+            path: '/nova-log-viewer2/list',
             component: require('./components/Logs/LogsTool'),
         },
         {
-            name: 'nova-log-viewer-show',
-            path: '/nova-log-viewer/list/:date/:level',
+            name: 'nova-log-viewer2-show',
+            path: '/nova-log-viewer2/list/:date/:level',
             component: require('./components/Show/Logs'),
         },
     ])

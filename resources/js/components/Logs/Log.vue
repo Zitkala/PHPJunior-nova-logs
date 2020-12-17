@@ -1,7 +1,7 @@
 <template>
     <tr>
         <td class="text-center" v-for="(value, key) in log" :key="key">
-            <button :disabled="value === 0" type="button" @click="$router.push({name: 'nova-log-viewer-show', params: {
+            <button :disabled="value === 0" type="button" @click="$router.push({name: 'nova-log-viewer2-show', params: {
                 date: date,
                 level: key === 'date' ? 'all' : key
             }})" :style="{ 'background-color' : key !== 'date' ? getColor(value === 0 ? 'empty' : key) : '#1976D2' }"  class="inline-block p-1 text-sm font-semibold text-white mr-2">
@@ -9,7 +9,7 @@
             </button>
         </td>
         <td>
-            <router-link :to="{name: 'nova-log-viewer-show', params: {
+            <router-link :to="{name: 'nova-log-viewer2-show', params: {
                 date: date,
                 level: 'all'
             }}"
@@ -48,7 +48,7 @@
         },
         computed: {
             downloadUrl() {
-                return '/nova-vendor/php-junior/nova-log-viewer/download/'
+                return '/nova-vendor/zitkala/nova-log-viewer2/download/'
             },
         },
         methods: {

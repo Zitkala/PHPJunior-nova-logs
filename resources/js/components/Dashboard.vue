@@ -51,7 +51,7 @@
         },
         methods: {
             getChartData () {
-                axios.get('/nova-vendor/php-junior/nova-log-viewer/get_chart_data')
+                axios.get('/nova-vendor/zitkala/nova-log-viewer2/get_chart_data')
                     .then(({data}) => {
                         this.dataCollection = data.chartData
                         this.percents = data.percents

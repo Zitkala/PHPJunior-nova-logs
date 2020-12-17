@@ -1,5 +1,5 @@
 {
-    "name": "php-junior/nova-logs",
+    "name": "zitkala/php-junior-nova-logs",
     "description": "Provides a Log Viewer for Laravel Nova",
     "keywords": [
         "laravel",
@@ -10,11 +10,17 @@
         {
             "name": "Nyi Nyi Lwin",
             "email": "nyinyilwin1992@hotmail.com"
+        },
+        {
+            "name":     "Norman Huth",
+            "email":    "norman@huth.it",
+            "homepage": "https://huth.it",
+            "role":     "Developer"
         }
     ],
     "require": {
         "php": "^7.1.3",
-        "arcanedev/log-viewer": "*"
+        "zitkala/arcanedev-log-viewer": "*"
     },
     "require-dev": {
         "orchestra/testbench": "^3.6",
@@ -22,18 +28,18 @@
     },
     "autoload": {
         "psr-4": {
-            "PhpJunior\\NovaLogViewer\\": "src/"
+            "Zitkala\\NovaLogViewer\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PhpJunior\\NovaLogViewer\\Tests\\": "tests"
+            "Zitkala\\NovaLogViewer\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "PhpJunior\\NovaLogViewer\\ToolServiceProvider"
+                "Zitkala\\NovaLogViewer\\ToolServiceProvider"
             ]
         }
     },
